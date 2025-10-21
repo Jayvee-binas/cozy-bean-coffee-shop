@@ -1,0 +1,71 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "orderName": "John Doe",
+      "orderPhone": "+63 912 345 6789",
+      "orderEmail": "john@example.com",
+      "orderType": "latte",
+      "orderSize": "medium",
+      "orderQuantity": 2,
+      "orderMilk": "oat",
+      "orderSugar": "less",
+      "orderNotes": "Extra hot please",
+      "pickupTime": "14:30",
+      "orderDate": "2025-01-27T10:30:00.000Z",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "orderName": "Jane Smith",
+      "orderPhone": "+63 917 123 4567",
+      "orderEmail": "jane@example.com",
+      "orderType": "espresso",
+      "orderSize": "small",
+      "orderQuantity": 1,
+      "orderMilk": "none",
+      "orderSugar": "none",
+      "orderNotes": "",
+      "pickupTime": "15:00",
+      "orderDate": "2025-01-27T11:15:00.000Z",
+      "status": "ready"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "+63 918 765 4321",
+      "subject": "general",
+      "message": "I love your coffee! Do you have any plans to open a branch in Makati?",
+      "date": "2025-01-27T09:45:00.000Z",
+      "status": "new"
+    },
+    {
+      "id": 2,
+      "name": "Bob Wilson",
+      "email": "bob@example.com",
+      "phone": "+63 919 876 5432",
+      "subject": "feedback",
+      "message": "Great service and excellent coffee quality. Keep up the good work!",
+      "date": "2025-01-26T16:20:00.000Z",
+      "status": "replied"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "reservationName": "Maria Santos",
+      "reservationPhone": "+63 920 123 4567",
+      "reservationEmail": "maria@example.com",
+      "reservationDate": "2025-01-28",
+      "reservationTime": "19:00",
+      "reservationGuests": "4",
+      "reservationOccasion": "birthday",
+      "reservationNotes": "Birthday celebration for my daughter",
+      "reservationDate": "2025-01-27T08:30:00.000Z",
+      "status": "confirmed"
+    }
+  ]
+}

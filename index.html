@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Cozy Bean</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <h1 class="navbar-brand">The Cozy Bean</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#order-form">Quick Order</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reservation-form">Reserve Table</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item">
+              <button class="btn btn-outline-light position-relative" onclick="openCart()">
+                🛒 Cart
+                <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Start Your Day with Coffee</h2>
+      <p>Freshly brewed, just for you.</p>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Coffee Menu</h2>
+    <div class="menu-items">
+             <div class="item">
+         <img src="espresso2.jpg" alt="Espresso">
+         <div class="item-content">
+           <h3>Espresso</h3>
+           <p>Strong and bold</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="espresso-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱120</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="espresso-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱140</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="espresso-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱160</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Espresso', 'espresso2.jpg', 'espresso-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="latte4.jpg" alt="Latte">
+         <div class="item-content">
+           <h3>Latte</h3>
+           <p>Smooth and creamy</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="latte-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱150</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="latte-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱170</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="latte-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱190</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Latte', 'latte4.jpg', 'latte-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="cappuccino.jpg" alt="Cappuccino">
+         <div class="item-content">
+           <h3>Cappuccino</h3>
+           <p>Perfect foam blend</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="cappuccino-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱130</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="cappuccino-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱150</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="cappuccino-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱170</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Cappuccino', 'cappuccino.jpg', 'cappuccino-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="americano.jpg" alt="Americano">
+         <div class="item-content">
+           <h3>Americano</h3>
+           <p>Espresso diluted with hot water</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="americano-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱120</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="americano-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱140</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="americano-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱160</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Americano', 'americano.jpg', 'americano-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="mocha.jpg" alt="Mocha">
+         <div class="item-content">
+           <h3>Mocha</h3>
+           <p>Chocolate-flavored coffee</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="mocha-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱100</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="mocha-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱120</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="mocha-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱140</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Mocha', 'mocha.jpg', 'mocha-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="macchiato.jpg" alt="Macchiato">
+         <div class="item-content">
+           <h3>Macchiato</h3>
+           <p>Espresso with a dollop of milk</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="macchiato-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱135</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="macchiato-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱155</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="macchiato-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱175</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Macchiato', 'macchiato.jpg', 'macchiato-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="coldbrew3.jpg" alt="Cold Brew">
+         <div class="item-content">
+           <h3>Cold Brew</h3>
+           <p>Slow-steeped cold coffee</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="coldbrew-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱100</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="coldbrew-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱120</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="coldbrew-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱140</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Cold Brew', 'coldbrew3.jpg', 'coldbrew-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+
+             <div class="item">
+         <img src="flat white.jpg" alt="Flat White">
+         <div class="item-content">
+           <h3>Flat White</h3>
+           <p>Velvety espresso-milk mix</p>
+           <div class="size-options">
+             <label class="size-option">
+               <input type="radio" name="flatwhite-size" value="small" checked>
+               <span class="size-label">Small</span>
+               <span class="size-price">₱120</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="flatwhite-size" value="medium">
+               <span class="size-label">Medium</span>
+               <span class="size-price">₱140</span>
+             </label>
+             <label class="size-option">
+               <input type="radio" name="flatwhite-size" value="large">
+               <span class="size-label">Large</span>
+               <span class="size-price">₱160</span>
+             </label>
+           </div>
+           <button class="add-to-cart-btn" onclick="addToCartWithSize('Flat White', 'flat white.jpg', 'flatwhite-size')">🛒 Add to Cart</button>
+         </div>
+       </div>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cartItems">
+            <!-- Cart items will be displayed here -->
+          </div>
+          <div class="text-end mt-3">
+            <h5>Total: ₱<span id="cartTotal">0</span></h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+          <button type="button" class="btn btn-success" onclick="checkout()">Checkout</button>
+          <button type="button" class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="order-form" class="order-form-section">
+    <h2>Quick Order Form</h2>
+    <div class="order-form-container">
+      <form id="quickOrderForm" class="coffee-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-name">Full Name *</label>
+            <input type="text" id="order-name" name="orderName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="order-phone">Phone Number *</label>
+            <input type="tel" id="order-phone" name="orderPhone" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-email">Email Address *</label>
+            <input type="email" id="order-email" name="orderEmail" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="order-type">Coffee Type *</label>
+            <select id="order-type" name="orderType" required>
+              <option value="">Select coffee</option>
+              <option value="espresso">Espresso</option>
+              <option value="americano">Americano</option>
+              <option value="latte">Latte</option>
+              <option value="cappuccino">Cappuccino</option>
+              <option value="flat-white">Flat White</option>
+              <option value="mocha">Mocha</option>
+              <option value="macchiato">Macchiato</option>
+              <option value="cold-brew">Cold Brew</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-size">Size *</label>
+            <select id="order-size" name="orderSize" required>
+              <option value="">Select size</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="order-quantity">Quantity *</label>
+            <input type="number" id="order-quantity" name="orderQuantity" min="1" max="10" value="1" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="order-milk">Milk Preference</label>
+            <select id="order-milk" name="orderMilk">
+              <option value="regular">Regular Milk</option>
+              <option value="skim">Skim Milk</option>
+              <option value="almond">Almond Milk</option>
+              <option value="oat">Oat Milk</option>
+              <option value="soy">Soy Milk</option>
+              <option value="none">No Milk</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="order-sugar">Sugar Level</label>
+            <select id="order-sugar" name="orderSugar">
+              <option value="none">No Sugar</option>
+              <option value="less">Less Sugar</option>
+              <option value="normal">Normal</option>
+              <option value="extra">Extra Sugar</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="order-notes">Special Instructions</label>
+          <textarea id="order-notes" name="orderNotes" rows="3" placeholder="Any special requests, allergies, or preferences..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="pickup-time">Preferred Pickup Time *</label>
+          <input type="time" id="pickup-time" name="pickupTime" required>
+        </div>
+        
+        <button type="submit" class="btn-order-submit">Place Order</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="reservation-form" class="reservation-section">
+    <h2>Table Reservation</h2>
+    <div class="reservation-container">
+      <form id="reservationForm" class="reservation-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reservation-name">Full Name *</label>
+            <input type="text" id="reservation-name" name="reservationName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="reservation-phone">Phone Number *</label>
+            <input type="tel" id="reservation-phone" name="reservationPhone" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reservation-email">Email Address *</label>
+            <input type="email" id="reservation-email" name="reservationEmail" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="reservation-date">Date *</label>
+            <input type="date" id="reservation-date" name="reservationDate" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reservation-time">Time *</label>
+            <input type="time" id="reservation-time" name="reservationTime" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="reservation-guests">Number of Guests *</label>
+            <select id="reservation-guests" name="reservationGuests" required>
+              <option value="">Select guests</option>
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6+ People</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="reservation-occasion">Occasion</label>
+          <select id="reservation-occasion" name="reservationOccasion">
+            <option value="regular">Regular Visit</option>
+            <option value="birthday">Birthday</option>
+            <option value="business">Business Meeting</option>
+            <option value="date">Date</option>
+            <option value="celebration">Celebration</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="reservation-notes">Special Requests</label>
+          <textarea id="reservation-notes" name="reservationNotes" rows="3" placeholder="Any special seating requests, dietary restrictions, or other notes..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-reservation-submit">Reserve Table</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>contact@thecozybean.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>+631 234 5678</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Address</h4>
+              <p>123 Coffee Street, Manila, Philippines</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-facebook"></i>
+            <div>
+              <h4>Facebook</h4>
+              <p><a href="https://facebook.com/thecozybean" target="_blank" class="social-link">@thecozybean</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-instagram"></i>
+            <div>
+              <h4>Instagram</h4>
+              <p><a href="https://instagram.com/thecozybean" target="_blank" class="social-link">@thecozybean</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Send us a Message</h3>
+        <form id="contactForm" onsubmit="submitContactForm(event)">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="order">Order Question</option>
+              <option value="feedback">Feedback</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+          <div class="form-group">
+
+  <footer>
+    <p>&copy; 2025 The Cozy Bean. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
