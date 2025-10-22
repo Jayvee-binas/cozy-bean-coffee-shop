@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useCart } from '../contexts/CartContext';
 
 const Menu = () => {
-  const [cart, setCart] = useState([]);
+  const { addToCart } = useCart();
 
   const menuItems = [
     {
@@ -71,7 +72,7 @@ const Menu = () => {
     }));
   };
 
-  const addToCart = (item) => {
+  const handleAddToCart = (item) => {
     const selectedSize = selectedSizes[item.id] || 'small';
     const price = item.prices[selectedSize];
     
@@ -83,21 +84,7 @@ const Menu = () => {
       quantity: 1
     };
 
-    setCart(prevCart => {
-      const existingItem = prevCart.find(cartItem => 
-        cartItem.name === item.name && cartItem.size === selectedSize
-      );
-      
-      if (existingItem) {
-        return prevCart.map(cartItem =>
-          cartItem.name === item.name && cartItem.size === selectedSize
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        );
-      } else {
-        return [...prevCart, cartItem];
-      }
-    });
+    addToCart(cartItem);
 
     // Show notification
     alert(`${item.name} (${selectedSize.charAt(0).toUpperCase() + selectedSize.slice(1)}) added to cart!`);
@@ -132,7 +119,7 @@ const Menu = () => {
               </div>
               <button 
                 className="add-to-cart-btn"
-                onClick={() => addToCart(item)}
+                onClick={() => handleAddToCart(item)}
               >
                 🛒 Add to Cart
               </button>
