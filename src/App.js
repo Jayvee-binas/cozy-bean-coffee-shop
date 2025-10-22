@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { CartProvider } from './contexts/CartContext';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Analytics />
       </div>
     </CartProvider>
   );
